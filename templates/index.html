@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+
+<main>
+  <article>
+
+    <section class="hero" id="home" style="background-image: url('{% static 'assets/images/jewelry-shop-.jpg'%}')">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <p class="hero-subtitle">Fashion Everyday</p>
+
+          <h2 class="h1 hero-title">Unrivalled Fashion House</h2>
+
+          <button href="#" class=" btn btn-primary">Shop Now</button>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Service -->
+    {% include 'service.html' %}
+
+    <!-- Category -->
+    {% include 'category.html' %}
+
+    <!-- Products -->
+    <section class="section product">
+      <div class="container">
+
+        <h2 class="h2 section-title">Products of the week</h2>
+
+        <ul class="filter-list">
+
+          <li>
+            <button class="filter-btn active">Best Seller</button>
+          </li>
+
+          <li>
+            <button class="filter-btn">Hot Collection</button>
+          </li>
+
+          <li>
+            <button class="filter-btn">Trendy</button>
+          </li>
+
+          <li>
+            <button class="filter-btn">New Arrival</button>
+          </li>
+
+        </ul>
+
+        <ul class="product-list">
+
+          <li>
+            <div class="product-card">
+
+              <figure class="card-banner">
+
+                <a href="#">
+                  <img src="{% static 'assets/images/product-1.jpg' %}" alt="Varsi Leather Bag" loading="lazy"
+                    width="800" height="1034" class="w-100">
+                </a>
+
+                <div class="card-badge red">-25%</div>
+
+                <div class="card-actions">
+
+                  <button class="card-action-btn" aria-label="Quick view">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+
+                  <button class="card-action-btn cart-btn">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                    <p>Add to Cart</p>
+                  </button>
+
+                  <button class="card-action-btn" aria-label="Add to Wishlist">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+
+                </div>
+
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title">
+                  <a href="#">Varsi Leather Bag</a>
+                </h3>
+
+                <div class="card-price">
+                  <data value="48.75">&pound;48.75</data>
+
+                  <data value="65.00">&pound;65.00</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+        <button class="btn btn-outline">View All Products</button>
+
+      </div>
+    </section>
+    
+
+    <!-- 
+        - #BLOG
+      -->
+
+    <section class="section blog">
+      <div class="container">
+
+        <h2 class="h2 section-title">Latest fashion news</h2>
+
+        <ul class="blog-list">
+
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner">
+                <a href="#">
+                  <img src="./assets/images/blog-1.jpg" alt="Worthy Cyber Monday Fashion From Casmart" loading="lazy"
+                    width="1020" height="700" class="w-100">
+                </a>
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="folder-open-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">Fashion</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">
+                      <time datetime="2021-03-31">31 Mar 2021</time>
+                    </a>
+                  </li>
+
+                </ul>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Worthy Cyber Monday Fashion From Casmart</a>
+                </h3>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner">
+                <a href="#">
+                  <img src="./assets/images/blog-2.jpg" alt="Holiday Home Decoration I’ve Recently Ordered"
+                    loading="lazy" width="1020" height="700" class="w-100">
+                </a>
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="folder-open-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">Fashion</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">
+                      <time datetime="2021-03-31">31 Mar 2021</time>
+                    </a>
+                  </li>
+
+                </ul>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Holiday Home Decoration I’ve Recently Ordered</a>
+                </h3>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner">
+                <a href="#">
+                  <img src="./assets/images/blog-3.jpg" alt="Unique Ideas for Fashion You Haven’t heard yet"
+                    loading="lazy" width="1020" height="700" class="w-100">
+                </a>
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="folder-open-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">Fashion</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <a href="#" class="card-meta-link">
+                      <time datetime="2021-03-31">31 Mar 2021</time>
+                    </a>
+                  </li>
+
+                </ul>
+
+                <h3 class="h3 card-title">
+                  <a href="#">Unique Ideas for Fashion You Haven’t heard yet</a>
+                </h3>
+
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+        - #NEWSLETTER
+      -->
+
+    <section class="section newsletter">
+      <div class="container">
+
+        <div class="newsletter-card" style="background-image: url('./assets/images/newsletter-bg.png')">
+
+          <h2 class="card-title">Subscribe Newsletter</h2>
+
+          <p class="card-text">
+            Enter your email below to be the first to know about new collections and product launches.
+          </p>
+
+          <form action="" class="card-form">
+
+            <div class="input-wrapper">
+              <ion-icon name="mail-outline"></ion-icon>
+
+              <input type="email" name="emal" placeholder="Enter your email" required class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              <span>Subscribe</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </article>
+</main>
+</body>
+
+</html>
+{% endblock content %}
