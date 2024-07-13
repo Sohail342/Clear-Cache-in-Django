@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Nasir_Shop',
+    'cache_cleaner',
 ]
 
 MIDDLEWARE = [
