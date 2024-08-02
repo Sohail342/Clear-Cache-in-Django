@@ -4,7 +4,7 @@
 {% block content %}
 <section class="section product">
     <div class="container">
-        <h2 class="h2 section-title">Hot Collection</h2>
+        <h2 class="h2 section-title">{{ category.name }}</h2>
 
         <ul class="product-list">
             {% for product in products %}
@@ -12,8 +12,7 @@
                 <div class="product-card">
                     <figure class="card-banner">
                         <a href="{% url 'each_product' product.id %}">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy" width="800"
-                                height="1034" class="w-100">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy" width="800" height="1034" class="w-100">
                         </a>
                         <div class="card-badge red">-25%</div>
                         <div class="card-actions">

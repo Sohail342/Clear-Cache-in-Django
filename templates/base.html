@@ -6,17 +6,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casmart - Biggest shopping center</title>
+  <title>Youkiddies</title>
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+  <link rel="shortcut icon" href="{% static 'favi.svg' %}" type="image/svg+xml">
 
   <!-- 
     - custom css link
   -->
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/forms.css' %}">
 
 <!-- 
     - TailBlock
@@ -41,7 +42,6 @@
     <div class="container">
 
       <div class="overlay" data-overlay></div>
-
       <div class="header-search">
         <input type="search" name="search" placeholder="Search Product..." class="input-field">
 
@@ -50,22 +50,26 @@
         </button>
       </div>
 
-      <a href="#" class="logo">
-        <img src="{% static 'assets/images/logo.svg' %}" alt="Casmart logo" width="130" height="31">
+      <a href="{% url 'index' %}" class="logo">
+        <img src="{% static 'assets/images/brandLogo.svg' %}" alt="Casmart logo" width="130" height="31">
       </a>
 
       <div class="header-actions">
 
-        <a href="#" class="header-action-btn">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="header-action-btn">
+          <ion-icon name="person" aria-hidden="true"></ion-icon>
 
-          <p class="header-action-label">Sign in</p>
+          <p class="header-action-label">Log out</p>
         </a>
+        {% endif %}
 
-        <a class="header-action-btn">
-          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        <a href="#" class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 
-          <p class="header-action-label">Search</p>
+          <p  class="header-action-label">Wishlisht</p>
+
+          <div class="btn-badge" aria-hidden="true">2</div>
         </a>
 
         <a href="#" class="header-action-btn">
@@ -75,14 +79,20 @@
 
           <div class="btn-badge green" aria-hidden="true">3</div>
         </a>
+        
+        <a class="header-action-btn">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
 
-        <a href="#" class="header-action-btn">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <p  class="header-action-label">Wishlisht</p>
-
-          <div class="btn-badge" aria-hidden="true">2</div>
+          <p class="header-action-label">Search</p>
         </a>
+        
+        {% if not request.user.is_authenticated %}
+        <a href="{% url 'login' %}" class="header-action-btn">
+          <ion-icon name="person" aria-hidden="true"></ion-icon>
+          
+          <p class="header-action-label">Sign in</p>
+        </a>
+        {% endif %}
 
       </div>
 
@@ -96,8 +106,8 @@
 
         <div class="navbar-top">
 
-          <a href="#" class="logo">
-            <img src="{% static 'assets/images/logo.svg' %}" alt="Casmart logo" width="130" height="31">
+          <a href="" class="logo">
+            <img src="{% static 'assets/images/brandLogo.svg' %}" alt="Casmart logo" width="130" height="31">
           </a>
 
           <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
@@ -117,7 +127,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Collections</a>
+            <a href="{% url 'categories' %}" class="navbar-link">Collections</a>
           </li>
 
           <li>
@@ -135,11 +145,177 @@
     </div>
   </header>
 
-  {% block content %} {% endblock content %}
+  {% block content %} 
+  
+  {% endblock content %}
 
  
 
-  {% include 'footer.html' %}
+  <footer class="footer">
+
+    <div class="footer-top">
+        <div class="container">
+
+            <div class="footer-brand">
+
+                <a href="{% url 'index' %}" class="logo">
+                    <img src="{% static 'assets/images/brandLogo.svg' %}" alt="Casmart logo" width="130" height="31">
+                </a>
+
+                <p class="footer-text">
+                    "Bringing Smiles to All Ages" embodies YouKiddies' mission to spread joy 
+                    with a diverse selection of gifts. We aim to provide products that appeal 
+                    to all generations, ensuring everyone finds something special to cherish, regardless of age.
+                </p>
+
+                <ul class="social-list">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-pinterest"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Information</p>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">About Company</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Payment Type</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Return Policy</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">List Of Shops</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Become an Agent</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Refund Policy</a>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Category</p>
+                </li>
+               
+                <li>
+                    <a href="#" class="footer-link">Nmop</a>
+                </li>
+                
+
+                <li>
+                    <a href="#" class="footer-link">Women's Clothing</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Plus Sizes</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Complete Your Look</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Baby Corner</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Man & Woman Shoe</a>
+                </li>
+
+            </ul>
+
+            <ul class="footer-list">
+
+                <li>
+                    <p class="footer-list-title">Contact Us</p>
+                </li>
+
+                <li>
+                    <a href="mailto:your-email@example.com" class="footer-link">
+                        <ion-icon name="mail-outline"></ion-icon> sohailahmad342@gmail.com
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="tel:+1234567890" class="footer-link">
+                        <ion-icon name="call-outline"></ion-icon> +92 3428041928
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.instagram.com/yourprofile" class="footer-link" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon> Follow us on Instagram
+                    </a>
+                </li>
+                
+
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+
+            <p class="copyright">
+                &copy; 2024 <a href="#">Youkiddies</a>. All Rights Reserved
+            </p>
+
+            <ul class="footer-bottom-list">
+
+                <li>
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</footer>
   
 
   <!-- 
