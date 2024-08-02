@@ -56,7 +56,7 @@ Open your browser and go to http://127.0.0.1:8000
 
 
 ## Technologies Used
-**Backend:** Django, Django Rest Framework
+**Backend:** Django
 
 **Frontend:** HTML, CSS, JavaScript, TailwindCSS
 
