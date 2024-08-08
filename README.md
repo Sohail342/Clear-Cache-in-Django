@@ -2,7 +2,9 @@
 The E-Commerce Web Application is a Django-based platform designed to provide a seamless online shopping experience. 
 The application features a user-friendly interface, efficient product management, and dynamic content rendering, making it an ideal solution for an online gift shop.
 
+## Overview 
 
+![E-Commerce](static/assets/images/ss.JPG)
 ## Features
 
 ### 1. Product Management
